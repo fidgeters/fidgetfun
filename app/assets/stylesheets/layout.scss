@@ -20,7 +20,7 @@ h2 {
 
 .header {
   height: 100vh;
-  background: no-repeat center center;
+  background: no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -34,5 +34,37 @@ h2 {
   h1 {
     font-size: 90px;
     text-shadow: 1px 1px 2px black;
+  }
+}
+
+.row {
+  margin-bottom: 0;
+
+  .col.left-thingy {
+    padding: 40px;
+    background-color: #f6f6f6;
+    height: 500px;
+    h2 {
+      color: #656a64;
+    }
+    color: #1b1715;
+  }
+
+  .col.right-thingy {
+    background: no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 500px;
+  }
+}
+
+.cta {
+  background-color: $base-color;
+
+  &:hover {
+    background-color: $base-color;
+    opacity: 0.9;
   }
 }
