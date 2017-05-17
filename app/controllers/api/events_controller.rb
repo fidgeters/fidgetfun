@@ -1,16 +1,19 @@
 class Api::EventsController < Api::BaseController
   def create
 
-    params["events"].each do |event|
-      event = Event.create(
-        event_type: event["type"],
-        value: event["value"],
-        pressed_at: event["pressed_at"],
-        duration: event["duration"]
-        )
+    if params["data"].present?
+      params["data"]["events"].each do |event|
+        event = Event.create(
+          event_type: event["type"],
+          value: event["value"],
+          pressed_at: event["pressed_at"],
+          duration: event["duration"]
+          )
+      end
+      render_succes
+    else
+      render_error
     end
-
-    render_succes
   end
 
   def render_succes
