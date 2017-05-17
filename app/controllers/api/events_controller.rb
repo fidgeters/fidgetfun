@@ -1,8 +1,8 @@
 class Api::EventsController < Api::BaseController
   def create
 
-    if params["data"].present?
-      params["data"]["events"].each do |event|
+    if params["events"].present?
+      params["events"].each do |event|
         event = Event.create(
           event_type: event["type"],
           value: event["value"],
