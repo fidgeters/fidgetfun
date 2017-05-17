@@ -10,6 +10,8 @@ var messages = {
   thirteenish: 'Yes yes yes, do it again',
   arm_twister: "Don't twist my arm",
   round_the_world: 'Round round the world it goes',
+  turn_on: 'You really turn me on!',
+  turn_off: 'It was nice while it lasted'
 }
 
 var hitZero;
@@ -17,6 +19,14 @@ App.cable.subscriptions.create({ channel: "EventsChannel" }, {
   received: function(data) {
     if (data.event_type == 'button') {
       buttonPresses++;
+    }
+
+    if (data.event_type == 'switch') {
+      if (data.value == 1) {
+        triggerOnce('turn_on');
+      } else {
+        triggerOnce('turn_off');
+      }
     }
 
     if (data.event_type == 'meter') {
