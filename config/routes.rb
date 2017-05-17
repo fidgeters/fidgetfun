@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     resources :events, only: [ :create ]
   end
+
+  get "/:device_id", to: "events#user", as: :user
 end

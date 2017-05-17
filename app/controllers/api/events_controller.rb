@@ -8,7 +8,7 @@ class Api::EventsController < Api::BaseController
           value: event["value"],
           pressed_at: event["pressed_at"],
           duration: event["duration"],
-          device_id: params[:device_id]
+          device_id: params[:device_id].parameterize
           )
       end
       render_succes

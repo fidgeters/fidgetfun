@@ -1,3 +1,29 @@
-ul
-  - @events.each do |event|
-    li #{event.event_type} at #{event.pressed_at} for #{event.duration} seconds [value: #{event.value}]
+h1.text-center.data-header Todays data
+
+.row.data-row
+  .col.data-card.s4
+    h2 Total events
+    h3 = @events_today.count
+  .col.data-card.s4
+    h2 Longest press
+    h3
+      => @longest_press
+    p seconds
+  .col.data-card.s4
+    h2 presses per minute
+    h3
+      => @presses_per_minute_today.round(3)
+
+.rankings
+  h2.text-center Rankings
+  ul
+    - @rankings.each do |ranking|
+      li.text-center
+         = link_to "#{ranking[0]} - #{ranking[1]} events", user_path(ranking[0])
+
+
+  / .col.data-card.s4
+  /   h2 presses per minute for last 10 minutes
+  /   h3
+  /     => @presses_per_minute_last_ten_minutes
+  /   p seconds

@@ -1,0 +1,15 @@
+h1.text-center.data-header todays data of #{@events.first.device_id}
+
+.row.data-row
+  .col.data-card.s4
+    h2 Total events
+    h3 = @events_today.count
+  .col.data-card.s4
+    h2 Longest press
+    h3
+      => @longest_press
+    p seconds
+  .col.data-card.s4
+    h2 presses per minute
+    h3
+      => @presses_per_minute_today.round(3)
