@@ -13,4 +13,12 @@ h1.data-header {
 
 .rankings {
   margin-top: 40px;
+
+  a {
+    color: white;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
 }

@@ -18,8 +18,9 @@ h1.text-center.data-header Todays data
   h2.text-center Rankings
   ul
     - @rankings.each do |ranking|
-      li.text-center
-         = link_to "#{ranking[0]} - #{ranking[1]} events", user_path(ranking[0])
+      - if ranking[0].present?
+        li.text-center
+           = link_to "#{ranking[0]} - #{ranking[1]} events", user_path(ranking[0])
 
 
   / .col.data-card.s4
