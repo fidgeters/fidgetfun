@@ -1,21 +1,26 @@
-$(document).ready(function() {
-  $('.pour') //Pour Me Another Drink, Bartender!
-    .delay(2000)
-    .animate({
-      height: '360px'
-      }, 1500)
-    .delay(1600)
-    .slideUp(500);
-
+//= require ./cable
+window.beerControl = function(percent) {
   $('#liquid') // I Said Fill 'Er Up!
-    .delay(3400)
     .animate({
-      height: '170px'
-    }, 2500);
+      height: (170 * (percent / 100)) + 'px'
+    }, 250);
 
   $('.beer-foam') // Keep that Foam Rollin' Toward the Top! Yahooo!
-    .delay(3400)
     .animate({
-      bottom: '200px'
-      }, 2500);
-  });
+      bottom: (200 * (percent / 100)) + 'px'
+      }, 250);
+}
+
+$(document).ready(function() {
+  $('.pour').hide()
+
+  beerControl(0)
+});
+
+
+App.cable.subscriptions.create({ channel: "BeerChannel" }, {
+  received: function(data) {
+    console.log(data);
+    beerControl(data.percentage)
+  }
+})
