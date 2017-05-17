@@ -1,0 +1,3 @@
+ul
+  - @events.each do |event|
+    li #{event.event_type} at #{event.pressed_at} for #{event.duration} seconds [value: #{event.value}]
