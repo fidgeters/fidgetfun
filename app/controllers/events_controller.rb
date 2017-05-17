@@ -22,6 +22,10 @@ class EventsController < ApplicationController
     @presses_per_minute_today = @events_today.button_presses.count / ((Time.now - Time.now.beginning_of_day) / 60)
   end
 
+  def chat
+
+  end
+
   def beer
 
   end
