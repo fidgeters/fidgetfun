@@ -34,6 +34,8 @@ App.cable.subscriptions.create({ channel: "BeerChannel" }, {
   received: function(data) {
     percentage += data.percentage;
     if (percentage >= 100) { percentage = 100; }
-    beerControl(percentage)
+    beerControl(percentage);
+
+    $('#pushes').text(data.pushes);
   }
 })
