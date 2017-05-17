@@ -3,15 +3,18 @@
 var buttonPresses = 0;
 
 var messages = {
-  one: 'Nice one!',
-  five: 'Wow, you are really fidgiting!',
-  ten: "Watch out for the sore thumb!",
+  one: 'Hey, nice to meet you!',
+  five: "Watch out for the sore thumb!",
+  ten: 'Wow, you are really fidgiting!',
   sevenish: 'Ooh, just the way I like it',
   thirteenish: 'Yes yes yes, do it again',
+  // dial
   arm_twister: "Don't twist my arm",
+  zen: 'Totally Zen 🙏🏻',
   round_the_world: 'Round round the world it goes',
+  // switch
   turn_on: 'You really turn me on!',
-  turn_off: 'It was nice while it lasted'
+  turn_off: 'It was nice while it lasted...'
 }
 
 var hitZero;
@@ -36,6 +39,7 @@ App.cable.subscriptions.create({ channel: "EventsChannel" }, {
 
       if (data.value == 0) {
         hitZero = true;
+        triggerOnce('zen');
       }
       if (data.value == 10 && hitZero) {
         trigger('round_the_world');
