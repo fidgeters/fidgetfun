@@ -36,6 +36,7 @@ gem 'jbuilder', '~> 2.5'
 gem "jquery-rails"
 gem "slim-rails"
 gem 'enumerize'
+gem 'materialize-sass'
 
 
 group :development, :test do
