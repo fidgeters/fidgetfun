@@ -27,15 +27,15 @@ class BadgeCreator
       ]
     },
     {
-      value: -> (device_id) { Event.where(event_type: :button, device_id: device_id).order(duration: :desc).first&.duration.to_f },
+      value: -> (device_id) { Event.where(event_type: :button, device_id: device_id).order(duration: :desc).first&.duration.to_i },
       badges: [
         {
-          condition: -> (value) { value < 0.1 },
+          condition: -> (value) { value < 100 },
           name: :fast_one,
           description: 'Impressively fast clicks'
         },
         {
-          condition: -> (value) { value > 5 },
+          condition: -> (value) { value > 5000 },
           name: :long_one,
           description: "You held that really long, didn't you want to pee or something?"
         }
