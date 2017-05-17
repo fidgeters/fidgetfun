@@ -1,0 +1,38 @@
+body {
+  background-color: $base-color;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+}
+
+h1 {
+  font-family: 'Lobster', cursive;
+  font-size: 36px;
+}
+
+h2 {
+  margin: 0 auto;
+  width: 400px;
+  font-size: 36px;
+  text-align: center;
+  font-family: 'Lobster', cursive;
+  color: whiteSmoke;
+}
+
+.header {
+  height: 100vh;
+  background: no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: white;
+}
+
+.header-logo {
+  width: 100%;
+  text-align: center;
+  h1 {
+    font-size: 90px;
+    text-shadow: 1px 1px 2px black;
+  }
+}
