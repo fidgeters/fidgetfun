@@ -2,13 +2,13 @@ nav
   .nav-wrapper
     = link_to root_path do
      .right.brand-logo
-      | Fidget.Fun
+      | Fidgit.Fun
       /small< 100% guaranteed to waste a 100% of your time
     ul#nav-mobile.left
+      li
+        = link_to "chat", chat_path
       li
         = link_to "beer", beer_path
       li
         = link_to "events", events_path
-      li
-        = link_to "chat", chat_path
 
